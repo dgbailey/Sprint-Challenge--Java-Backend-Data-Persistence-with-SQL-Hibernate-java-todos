@@ -1,21 +1,18 @@
 @Transactional
 @Component
-public class SeedData implements CommandLineRunner
-{
+public class SeedData implements CommandLineRunner {
     RoleRepository rolerepos;
     UserRepository userrepos;
     ToDoRepository todorepos;
 
-    public SeedData(RoleRepository rolerepos, UserRepository userrepos, ToDoRepository todorepos)
-    {
+    public SeedData(RoleRepository rolerepos, UserRepository userrepos, ToDoRepository todorepos) {
         this.rolerepos = rolerepos;
         this.userrepos = userrepos;
         this.todorepos = todorepos
     }
 
     @Override
-    public void run(String[] args) throws Exception
-    {
+    public void run(String[] args) throws Exception {
         Role r1 = new Role("admin");
         Role r2 = new Role("user");
 
@@ -40,7 +37,7 @@ public class SeedData implements CommandLineRunner
         u4.getToDos().add(new ToDo("Complete the sprint challenge", "2019-02-22 04:04:04", u4));
 
         u3.getToDos().add(new ToDo("Walk the dogs", "2019-01-17 04:04:04", u3),
-        u3.getToDos().add(new ToDo("provide feedback to my instructor", "2019-02-13 04:04:04", u3);
+                u3.getToDos().add(new ToDo("provide feedback to my instructor", "2019-02-13 04:04:04", u3);
 
         userrepos.save(u1);
         userrepos.save(u2);
